@@ -21,7 +21,9 @@ app.use(
 
 // Middleware to parse JSON
 app.use(bodyParser.json());
-
+app.get('/',(req,res)=>{
+  res.send("<h1>Nodejs Server Running</h1>")
+})
 // Utility to verify JWT token
 const verifyToken = (req) => {
   const token = req.headers.authorization?.split(" ")[1]; // Get token from "Authorization: Bearer <token>"
